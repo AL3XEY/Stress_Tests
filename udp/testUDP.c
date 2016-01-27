@@ -58,7 +58,7 @@ int main(int argc, char** argv){
 	}
 
 	for(i = 0; i < nb; i++){
-		pthread_create(&threads[i], NULL, envoie, &info);
+		pthread_create(&threads[i], NULL, envoi, &info);
 	}
 
 	for(i = 0; i < nb; i++){
@@ -67,21 +67,21 @@ int main(int argc, char** argv){
 
 }
 
-void* envoie(void* info_void){
+void* envoi(void* info_void){
 
 	Info* info = (Info*) info_void;
 	char* buffer = calloc(2000, sizeof(char));
-	unsigned long int i;
+	unsigned long long i, max = ULLONG_MAX;
 	int tosize = sizeof(*info->info);
 
 	for(i = 0; i < 1400; i++){
 		buffer[i] = 't';
 	}
 
-	for(i = 0; i < 9999999; i++){
+	for(i = 0; i < max; i++){
 		if(sendto(info->sock, buffer, strlen(buffer), 0, (SOCKADDR *)info->info, (socklen_t) tosize) < 0)
 		{
-		    printf("Nothing send\n");
+		    printf("Nothing sent\n");
 		}
 	}
 	pthread_exit(NULL);

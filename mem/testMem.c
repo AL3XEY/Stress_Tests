@@ -30,7 +30,7 @@ int main(int argc, char** argv){
 
 void test_fork(){
 
-	unsigned long int max = 9999999999999999, i, n1 = 1, n2 = 0;
+	unsigned long long max = ULLONG_MAX, i, n1 = 1, n2 = 0;
 	for(i = 2; i < max; i++){
 		int temp = n1 + n2;
 		n2 = n1;

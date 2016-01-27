@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 //Threads include
 #include <pthread.h>
@@ -33,6 +34,6 @@ struct Info{
 	SOCKADDR_IN* info;
 };
 
-void* envoie(void* v);
+void* envoi(void* v);
 
 #endif
