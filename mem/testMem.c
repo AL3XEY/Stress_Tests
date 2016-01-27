@@ -6,7 +6,7 @@ int main(int argc, char** argv){
 	int i;
 
 	if(argc != 2){
-		printf("Bad parameters\n");
+		printf("Usage : ./mem.out <number_of_forks>\n");
 		return 1;
 	}
 

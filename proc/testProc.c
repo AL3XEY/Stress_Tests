@@ -7,7 +7,7 @@ int main(int argc, char** argv){
 	int i;
 
 	if(argc != 2){
-		printf("Bad parameters\n");
+		printf("Usage : ./proc.out <number_of_threads>\n");
 		return 1;
 	}
 

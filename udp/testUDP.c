@@ -10,7 +10,7 @@ int main(int argc, char** argv){
 	struct hostent* hostinfo;
 
 	if(argc != 4){
-		printf("Incorrect arguments\n");
+		printf("Usage : ./udp.out <ip> <port> <number_of_threads>\n");
 		return 1;
 	}
 
@@ -18,7 +18,7 @@ int main(int argc, char** argv){
 	port = atoi(argv[2]);
 	nb = atoi(argv[3]);
 	if(nb == 0){
-		printf("Incorrect threads number\n");
+		printf("Incorrect thread number\n");
 		return 1;
 	}
 
@@ -53,7 +53,7 @@ int main(int argc, char** argv){
 
 	if(sendto(sock, "test", strlen("test"), 0, (SOCKADDR *)&to, (socklen_t) sizeof(to)) < 0)
 	{
-		printf("Impossible to send data\n");
+		printf("Unable to send data\n");
 		return 1;
 	}
 
